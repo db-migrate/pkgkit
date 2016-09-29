@@ -1,0 +1,39 @@
+{
+  "name": "db-migrate-pkgkit",
+  "version": "1.0.0",
+  "description": "A helper to develop plugins and drivers for db-migrate more easily.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": "./bin/db-migrate-pkgkit",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/db-migrate/pkgkit.git"
+  },
+  "keywords": [
+    "db-migrate",
+    "db",
+    "database",
+    "dbmigrate",
+    "migrate",
+    "migration",
+    "develop",
+    "development",
+    "plugin",
+    "addon",
+    "addin",
+    "kit",
+    "package",
+    "helper"
+  ],
+  "author": "Tobias Gurtzick <magic@wizardtales.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/db-migrate/pkgkit/issues"
+  },
+  "homepage": "https://github.com/db-migrate/pkgkit#readme",
+  "dependencies": {
+    "resolve": "^1.1.7"
+  }
+}
