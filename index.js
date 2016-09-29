@@ -1,30 +1,23 @@
-var resolve = require( 'resolve' );
 var path = require('path');
+var fs = require('fs');
 var pkg = require(path.join(process.cwd(), 'package.json'));
-var dbm;
+var program = require('commander');
+var pkginfo = require('pkginfo')(module, 'version'); // jshint ignore:line
+var cmdPath = path.join(__dirname, 'lib/commands');
+var files = fs.readdirSync(cmdPath);
 
-try {
-  try {
+files.forEach(function(file) {
 
-    dbm = require(
-      resolve.sync('db-migrate', { basedir: process.cwd() })
-    );
-  }
-  catch(e1) {
+  require(path.join(cmdPath, file))(program, pkg);
+});
 
-    try {
+program
+  .version(module.exports.version)
+  .option('-v, --verbose', 'Enable verbose mode.')
+  .action(function() {
+    global.verbose = true;
+  });
 
-      dbm = require('db-migrate');
-    }
-    catch (e2) {
-
-      dbm = require('../db-migrate');
-    }
-  }
-}
-catch (e3) {
-  console.error('db-migrate must be installed to use this kit!\n' +
-    'npm install db-migrate\n' +
-    'npm install -g db-migrate\n');
-  process.exit(1);
-}
+program.parse(process.argv);
+if(!program.args.length)
+  program.help();

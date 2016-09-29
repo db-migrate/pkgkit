@@ -34,6 +34,9 @@
   },
   "homepage": "https://github.com/db-migrate/pkgkit#readme",
   "dependencies": {
-    "resolve": "^1.1.7"
+    "commander": "^2.9.0",
+    "pkginfo": "^0.4.0",
+    "resolve": "^1.1.7",
+    "sane": "^1.4.1"
   }
 }
