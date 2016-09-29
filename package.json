@@ -1,6 +1,6 @@
 {
   "name": "db-migrate-pkgkit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A helper to develop plugins and drivers for db-migrate more easily.",
   "main": "index.js",
   "scripts": {
